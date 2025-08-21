@@ -1,0 +1,75 @@
+Day 1 Pseudo-code Problems
+
+
+⦁	1. Pet Adoption App
+   CLASS Pet
+    DATA MEMBERS:
+        name
+        age
+        breed
+
+    CONSTRUCTOR Pet(n, a, b)
+        name = n
+        age = a
+        breed = b
+
+    METHOD displayDetails()
+        PRINT "Name: " + name
+        PRINT "Age: " + age
+        PRINT "Breed: " + breed
+END CLASS
+
+
+CLASS Dog EXTENDS Pet
+    DATA MEMBERS:
+        isTrained
+
+    CONSTRUCTOR Dog(n, a, b, trained)
+        CALL Pet CONSTRUCTOR(n, a, b)
+        isTrained = trained
+
+    METHOD displayDetails()
+        CALL SUPER.displayDetails()
+        PRINT "Trained: " + isTrained
+END CLASS
+
+
+CLASS Cat EXTENDS Pet
+    DATA MEMBERS:
+        isIndoor
+
+    CONSTRUCTOR Cat(n, a, b, indoor)
+        CALL Pet CONSTRUCTOR(n, a, b)
+        isIndoor = indoor
+
+    METHOD displayDetails()
+        CALL SUPER.displayDetails()
+        PRINT "Indoor: " + isIndoor
+END CLASS
+
+
+CLASS Bird EXTENDS Pet
+    DATA MEMBERS:
+        canTalk
+
+    CONSTRUCTOR Bird(n, a, b, talk)
+        CALL Pet CONSTRUCTOR(n, a, b)
+        canTalk = talk
+
+    METHOD displayDetails()
+        CALL SUPER.displayDetails()
+        PRINT "Can Talk: " + canTalk
+END CLASS
+
+
+CLASS PetAdoptionApp
+    METHOD main()
+        CREATE Dog dog1 = NEW Dog("Bruno", 3, "Labrador", TRUE)
+        CREATE Cat cat1 = NEW Cat("Mittens", 2, "Persian", TRUE)
+        CREATE Bird bird1 = NEW Bird("Rio", 1, "Parrot", TRUE)
+
+        PRINT "--- Pet Adoption List ---"
+        CALL dog1.displayDetails()
+        CALL cat1.displayDetails()
+        CALL bird1.displayDetails()
+END CLASS
